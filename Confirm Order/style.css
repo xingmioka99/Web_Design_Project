@@ -13,31 +13,31 @@ body {
 	align-items: center;
 }
 
-/* Main box */
+
 .confirm-box {
-	background: #ffffff;
+	background: #7f4f24;
 	padding: 30px 35px;
 	width: 340px;
 	border-radius: 16px;
 	text-align: center;
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-	animation: pop 0.4s ease;
+
 }
 
-/* Title */
+
 .confirm-box h2 {
 	font-size: 24px;
 	margin-bottom: 10px;
 	color: #333;
 }
 
-/* Subtitle */
+
 .confirm-box p {
-	color: #666;
+	color: #f5f4f4;
 	margin-bottom: 20px;
 }
 
-/* Item name */
+
 .item-name {
 	font-size: 20px;
 	font-weight: bold;
@@ -45,23 +45,23 @@ body {
 	margin-bottom: 5px;
 }
 
-/* Item price */
+
 .item-price {
 	font-size: 18px;
 	color: #444;
 	margin-bottom: 25px;
 }
 
-/* Buttons container */
+
 .buttons {
 	display: flex;
 	gap: 12px;
 }
 
-/* Button base */
+
 .btn {
 	flex: 1;
-	padding: 12px 0;
+	padding: 12px;
 	text-decoration: none;
 	color: #fff;
 	border-radius: 10px;
@@ -69,30 +69,56 @@ body {
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Confirm button */
+
 .confirm {
-	background: linear-gradient(135deg, #4CAF50, #43a047);
+	background: #4CAF50;
+
 }
 
-/* Cancel button */
+
 .cancel {
-	background: linear-gradient(135deg, #e74c3c, #c0392b);
+	background: red;
 }
 
-/* Hover effect */
+
 .btn:hover {
 	transform: translateY(-2px);
 	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
-
-/* Animation */
-@keyframes pop {
-	from {
-		transform: scale(0.9);
-		opacity: 0;
-	}
-	to {
-		transform: scale(1);
-		opacity: 1;
-	}
+.item-card {
+	display: flex;
+	gap: 15px;
+	margin-bottom: 20px;
+	align-items: flex-start;
+	text-align: left;
 }
+
+.item-image {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	border-radius: 12px;
+}
+
+.text{
+    color: white;
+}
+
+.item-details {
+	flex: 1;
+    color: white;
+}
+
+.item-details p {
+	margin: 5px 0;
+	font-size: 14px;
+	color: #666;
+}
+
+.item-details .item-price {
+	font-size: 16px;
+	color: #c98b63;
+	margin-top: 10px;
+}
+
+
