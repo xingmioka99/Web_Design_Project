@@ -3,13 +3,17 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #c9a66b;
+    background-image: url(../landing.jpg);
+    backdrop-filter: blur(5px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
+
 .container {
     width: 500px;
     height: 550px;
     margin: 100px;
-    border: 2px solid;
     border-radius: 10px;
     background-color: #ebdcc9;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
@@ -30,6 +34,7 @@ body{
 .cancel-button {
     margin: 10px;
 }
+
 .loginhead {
     color: rgb(61, 109, 128);
     font-family: 'Plus Jakarta Sans';
@@ -63,11 +68,14 @@ body{
         border: 1px solid;
         border-radius: 5px;
         height: 30px;
-        background-color: #ebdcc9;
+        background-color: #f7f6f6;
     }
 }
 .footer {
     margin: 35px 25px 0 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .loginbutton {
         color: white;
         text-decoration: none;

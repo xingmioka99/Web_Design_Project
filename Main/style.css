@@ -1,6 +1,5 @@
 
 body {
-    position: relative;
 	background-color: #f5f0eb;
 	color: #333;
 	line-height: 1.6;
@@ -80,7 +79,7 @@ html {
 }
 
 .home {
-	background: url('https://github.com/xingmioka99/Web_Design_Project/blob/main/landing.jpg?raw=true') no-repeat center center/cover;
+	background: url('../landing.jpg') no-repeat center center/cover;
 	padding: 6rem 2rem;
 	text-align: center;
 	display: flex;
@@ -489,13 +488,17 @@ footer p {
 	.navbar {
 		display: none;
 	}
-	
+	.home {
+		padding: 4rem 1rem;
+		height: 40vh;
+		width: 100%;
+	}
 	.content h1 {
 		font-size: 2rem;
 	}
 	
 	.products-grid {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(1, 1fr);
 	}
 	
 	.location-iframe {
@@ -511,4 +514,28 @@ footer p {
 	}
 }
 
+/* Login Modal Styles */
+.login-modal {
+	display: none;
+	position: fixed;
+	z-index: 2000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	justify-content: center;
+	align-items: center;
+}
 
+.close-modal {
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+.close-modal img {
+	width: 32px;
+	height: 32px;
+}
