@@ -115,7 +115,29 @@ html {
 	padding: 0.8rem 2rem;
 	font-size: 1rem;
 }
-
+.submenu {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+.submenu-btn {
+	padding: 0.5rem 1rem;
+	background-color: transparent;
+	color: #4a3f35;
+	border-bottom: #333 2px solid;
+	border-right: none;
+	border-left: none;
+	border-top: none;
+	cursor: pointer;
+	font-weight: 600;
+	width: 300px;
+}
+.submenu-btn.active,
+.submenu-btn:hover {
+	border-bottom: #d4af7a 2px solid;
+	color: #d4af7a;
+}
 .menu {
 	padding: 3rem 2rem;
 	background-color: #f5f0eb;
@@ -168,6 +190,9 @@ html {
 .card:hover {
 	transform: translateY(-5px);
 	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.card.hidden {
+	display: none;
 }
 
 .product-image {

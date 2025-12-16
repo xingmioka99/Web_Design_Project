@@ -54,8 +54,14 @@
 	</section>
 	<section class="menu" id="menu">
 		<h1 class="title"><span>Menu</span></h1>
+		<div class="submenu"> 
+			<button class="submenu-btn active" data-category="all">Popular</button>
+			<button class="submenu-btn" data-category="pastries">Pastries</button>
+			<button class="submenu-btn" data-category="cake">Cakes</button>
+			<button class="submenu-btn" data-category="coffee">Coffee</button>
+		</div>
 		<div class="products-grid">
-			<div class="card">
+			<div class="card" data-category="pastries">
 				<img src="https://i0.wp.com/www.pardonyourfrench.com/wp-content/uploads/2025/09/homemade-baguettes-23.jpg?fit=801%2C1200&ssl=1" alt="Baguette" class="product-image">
 				<div class="info">
 					<div>
@@ -66,7 +72,7 @@
 				</div>
 			</div>
 
-			<div class="card">
+			<div class="card" data-category="pastries">
 				<img src="https://i0.wp.com/www.pardonyourfrench.com/wp-content/uploads/2025/09/homemade-baguettes-23.jpg?fit=801%2C1200&ssl=1" alt="Croissant" class="product-image">
 				<div class="info">
 					<div>
@@ -77,7 +83,7 @@
 				</div>
 			</div>
 
-			<div class="card">
+			<div class="card" data-category="pastries">
 				<img src="https://i0.wp.com/www.pardonyourfrench.com/wp-content/uploads/2025/09/homemade-baguettes-23.jpg?fit=801%2C1200&ssl=1" alt="Muffin" class="product-image">
 				<div class="info">
 					<div>
@@ -88,7 +94,7 @@
 				</div>
 			</div>
 
-			<div class="card">
+			<div class="card" data-category="cake">
 				<img src="https://i0.wp.com/www.pardonyourfrench.com/wp-content/uploads/2025/09/homemade-baguettes-23.jpg?fit=801%2C1200&ssl=1" alt="Cinnamon Roll" class="product-image">
 				<div class="info">
 					<div>
@@ -99,7 +105,7 @@
 				</div>
 			</div>
 
-			<div class="card">
+			<div class="card" data-category="cake">
 				<img src="https://i0.wp.com/www.pardonyourfrench.com/wp-content/uploads/2025/09/homemade-baguettes-23.jpg?fit=801%2C1200&ssl=1" alt="Fruit Tart" class="product-image">
 				<div class="info">
 					<div>
@@ -110,7 +116,7 @@
 				</div>
 			</div>
 
-			<div class="card">
+			<div class="card" data-category="cake">
 				<img src="https://i0.wp.com/www.pardonyourfrench.com/wp-content/uploads/2025/09/homemade-baguettes-23.jpg?fit=801%2C1200&ssl=1" alt="Cheese Cake" class="product-image">
 				<div class="info">
 					<div>
@@ -121,7 +127,7 @@
 				</div>
 			</div>
 
-			<div class="card">
+			<div class="card" data-category="coffee">
 				<img src="https://i0.wp.com/www.pardonyourfrench.com/wp-content/uploads/2025/09/homemade-baguettes-23.jpg?fit=801%2C1200&ssl=1" alt="Black Coffee" class="product-image">
 				<div class="info">
 					<div>
@@ -132,7 +138,7 @@
 				</div>
 			</div>
 
-			<div class="card">
+			<div class="card" data-category="coffee">
 				<img src="https://i0.wp.com/www.pardonyourfrench.com/wp-content/uploads/2025/09/homemade-baguettes-23.jpg?fit=801%2C1200&ssl=1" alt="Hot Chocolate" class="product-image">
 				<div class="info">
 					<div>
@@ -207,6 +213,29 @@
 		</div>
 		<p>&copy; 2024 Cakery. All rights reserved.</p>
 	</footer>
+	<script>
+		const submenuBtns = document.querySelectorAll('.submenu-btn');
+		const productCards = document.querySelectorAll('.card');
 
+		submenuBtns.forEach(btn => {
+			btn.addEventListener('click', () => {
+				submenuBtns.forEach(b => b.classList.remove('active'));
+				btn.classList.add('active');
+				const category = btn.getAttribute('data-category');
+				
+				productCards.forEach(card => {
+					const cardCategory = card.getAttribute('data-category');
+					
+					if (category === 'all') {
+						card.classList.remove('hidden');
+					} else if (cardCategory === category) {
+						card.classList.remove('hidden');
+					} else {
+						card.classList.add('hidden');
+					}
+				});
+			});
+		});
+	</script>
 </body>
 </html>
