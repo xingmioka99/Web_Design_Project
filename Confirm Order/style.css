@@ -1,0 +1,98 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+	min-height: 100vh;
+	background: linear-gradient(135deg, #f6e6d9, #fdf6f0);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Main box */
+.confirm-box {
+	background: #ffffff;
+	padding: 30px 35px;
+	width: 340px;
+	border-radius: 16px;
+	text-align: center;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+	animation: pop 0.4s ease;
+}
+
+/* Title */
+.confirm-box h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+	color: #333;
+}
+
+/* Subtitle */
+.confirm-box p {
+	color: #666;
+	margin-bottom: 20px;
+}
+
+/* Item name */
+.item-name {
+	font-size: 20px;
+	font-weight: bold;
+	color: #c98b63;
+	margin-bottom: 5px;
+}
+
+/* Item price */
+.item-price {
+	font-size: 18px;
+	color: #444;
+	margin-bottom: 25px;
+}
+
+/* Buttons container */
+.buttons {
+	display: flex;
+	gap: 12px;
+}
+
+/* Button base */
+.btn {
+	flex: 1;
+	padding: 12px 0;
+	text-decoration: none;
+	color: #fff;
+	border-radius: 10px;
+	font-weight: bold;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Confirm button */
+.confirm {
+	background: linear-gradient(135deg, #4CAF50, #43a047);
+}
+
+/* Cancel button */
+.cancel {
+	background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+/* Hover effect */
+.btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation */
+@keyframes pop {
+	from {
+		transform: scale(0.9);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
