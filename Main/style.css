@@ -104,7 +104,7 @@ html {
 
 .content h1 {
 	font-size: 3.5rem;
-	color: #d4af7a;
+	color: #4a3f35;
 	margin-bottom: 2rem;
 	font-weight: 700;
 	line-height: 1.2;
@@ -201,7 +201,12 @@ html {
 	object-fit: cover;
 	display: block;
 }
-
+.card a{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+}
 .order-btn {
 	padding: 0.6rem 1.2rem;
 	background-color: white;
