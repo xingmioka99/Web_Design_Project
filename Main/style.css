@@ -569,3 +569,85 @@ footer p {
 	width: 32px;
 	height: 32px;
 }
+/* PRODUCT MODAL */
+.product-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 4000;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-modal-box {
+    background-color: #3E3228;
+    width: 850px;
+    max-width: 95%;
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+    color: #e8d5c4;
+    position: relative;
+    animation: fadeInUp 0.3s ease;
+}
+
+.product-title {
+    color: #d4af7a;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.product-modal-content {
+    display: flex;
+    gap: 2rem;
+}
+
+.product-image-box img {
+    width: 260px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-details {
+    flex: 1;
+    font-size: 0.95rem;
+}
+
+.product-details p {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+}
+
+.description {
+    margin-bottom: 1.2rem;
+}
+
+.order-now-btn {
+    margin-top: 1.5rem;
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.card {
+    display: block;
+}
+
+.card.hidden {
+    display: none;
+}
+.card {
+	display: flex;
+	flex-direction: column;
+}
+

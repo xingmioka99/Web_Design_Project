@@ -7,7 +7,39 @@
 	<title>Cakery</title>
 	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+	<div class="product-modal" id="productModal">
+    	<div class="product-modal-box">
+
+        	<button class="close-modal">&times;</button>
+
+        	<h2 class="product-title">Freshly Baked Baguette</h2>
+
+        	<div class="product-modal-content">
+            	<!-- LEFT IMAGE -->
+            	<div class="product-image-box">
+                	<img src="https://i0.wp.com/www.pardonyourfrench.com/wp-content/uploads/2025/09/homemade-baguettes-23.jpg?fit=801%2C1200&ssl=1" alt="Baguette">
+            	</div>
+
+            	<!-- RIGHT DETAILS -->
+            	<div class="product-details">
+                	<p class="description">
+                    	Baguette : Known for its crisp exterior and soft, airy interior,
+                    	deeply embedded in French culture as an iconic staple,
+                    	often enjoyed fresh for its simple, satisfying taste.
+                	</p>
+
+                	<p><strong>Serves:</strong> 2</p>
+                	<p><strong>Contain:</strong> Flour, Water, Yeast, Salt</p>
+                	<p><strong>Calories:</strong> 289 Calories / serving</p>
+
+                	<a href="../Log In/Login.html" class="btn">Order Now</a>
+            	</div>
+        	</div>
+    	</div>
+	</div>
+
 	<header class="header">
 		<a href="#" class="logo"> CAKERY</a>
 		<nav class="navbar">
@@ -68,7 +100,7 @@
 						<h3 class="name">Baguette</h3>
 						<p class="price">$22.00</p>
 					</div>
-					<a href="../Confirm Order/confirm-order.html" class="order-btn">Order</a>
+					<button class="order-btn open-product">Order</button>
 				</div>
 			</div>
 
@@ -80,7 +112,7 @@
 						<p class="price">$7.00</p>
 					</div>
 				
-					<a href="../Confirm Order/confirm-order.html" class="order-btn">Order</a>
+					<button class="order-btn open-product">Order</button>
 
 				</div>
 			</div>
@@ -92,7 +124,7 @@
 						<h3 class="name">Muffin</h3>
 						<p class="price">$7.00</p>
 					</div>
-					<a href="../Confirm Order/confirm-order.html" class="order-btn">Order</a>
+					<button class="order-btn open-product">Order</button>
 
 				</div>
 			</div>
@@ -104,8 +136,7 @@
 						<h3 class="name">Cinnamon Roll</h3>
 						<p class="price">$5.00</p>
 					</div>
-					<a href="../Confirm Order/confirm-order.html" class="order-btn">Order</a>
-
+					<button class="order-btn open-product">Order</button>
 				</div>
 			</div>
 
@@ -116,7 +147,7 @@
 						<h3 class="name">Fruit Tart</h3>
 						<p class="price">$9.00</p>
 					</div>
-					<a href="../Confirm Order/confirm-order.html" class="order-btn">Order</a>
+					<button class="order-btn open-product">Order</button>
 
 				</div>
 			</div>
@@ -128,7 +159,7 @@
 						<h3 class="name">Cheese Cake</h3>
 						<p class="price">$12.00</p>
 					</div>
-					<a href="../Confirm Order/confirm-order.html" class="order-btn">Order</a>
+					<button class="order-btn open-product">Order</button>
 
 				</div>
 			</div>
@@ -140,7 +171,7 @@
 						<h3 class="name">Black Coffee</h3>
 						<p class="price">$3.00</p>
 					</div>
-					<a href="../Confirm Order/confirm-order.html" class="order-btn">Order</a>
+					<button class="order-btn open-product">Order</button>
 				</div>
 			</div>
 
@@ -151,7 +182,7 @@
 						<h3 class="name">Hot Chocolate</h3>
 						<p class="price">$5.00</p>
 					</div>
-					<a href="../Confirm Order/confirm-order.html" class="order-btn">Order</a>
+					<button class="order-btn open-product">Order</button>
 
 				</div>
 			</div>
@@ -220,29 +251,56 @@
 		</div>
 		<p>&copy; 2024 Cakery. All rights reserved.</p>
 	</footer>
-	<script>
-		const submenuBtns = document.querySelectorAll('.submenu-btn');
-		const productCards = document.querySelectorAll('.card');
+<script>
+/* ===== PRODUCT MODAL SCRIPT ===== */
 
-		submenuBtns.forEach(btn => {
-			btn.addEventListener('click', () => {
-				submenuBtns.forEach(b => b.classList.remove('active'));
-				btn.classList.add('active');
-				const category = btn.getAttribute('data-category');
-				
-				productCards.forEach(card => {
-					const cardCategory = card.getAttribute('data-category');
-					
-					if (category === 'all') {
-						card.classList.remove('hidden');
-					} else if (cardCategory === category) {
-						card.classList.remove('hidden');
-					} else {
-						card.classList.add('hidden');
-					}
-				});
-			});
-		});
-	</script>
+const productModal = document.getElementById("productModal");
+const closeModalBtn = document.querySelector(".close-modal");
+
+// Open modal when clicking Order
+document.querySelectorAll(".open-product").forEach(button => {
+    button.addEventListener("click", () => {
+        productModal.style.display = "flex";
+    });
+});
+
+// Close modal when clicking X
+closeModalBtn.addEventListener("click", () => {
+    productModal.style.display = "none";
+});
+
+// Close modal when clicking outside the box
+productModal.addEventListener("click", (e) => {
+    if (e.target === productModal) {
+        productModal.style.display = "none";
+    }
+});
+// Select all buttons and product cards
+const categoryButtons = document.querySelectorAll(".submenu-btn");
+const productCards = document.querySelectorAll(".card");
+
+// Add click event to each category button
+categoryButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        // Remove active class from all buttons
+        categoryButtons.forEach(btn => btn.classList.remove("active"));
+        // Add active class to clicked button
+        button.classList.add("active");
+
+        const category = button.getAttribute("data-category");
+
+        // Show/hide cards based on category
+        productCards.forEach(card => {
+            if (category === "all" || card.getAttribute("data-category") === category) {
+                card.classList.remove("hidden");
+            } else {
+                card.classList.add("hidden");
+            }
+        });
+    });
+});
+
+</script>
+
 </body>
 </html>
