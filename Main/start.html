@@ -25,16 +25,14 @@
             	<!-- RIGHT DETAILS -->
             	<div class="product-details">
                 	<p class="description">
-                    	Baguette : Known for its crisp exterior and soft, airy interior,
-                    	deeply embedded in French culture as an iconic staple,
-                    	often enjoyed fresh for its simple, satisfying taste.
+                    	
                 	</p>
 
                 	<p><strong>Serves:</strong> 2</p>
                 	<p><strong>Contain:</strong> Flour, Water, Yeast, Salt</p>
                 	<p><strong>Calories:</strong> 289 Calories / serving</p>
 
-                	<a href="../Log In/Login.html" class="btn">Order Now</a>
+                	<a href="../Log In/Login.html" class="btn" id="confirmOrderBtn">Confirm Order</a>
             	</div>
         	</div>
     	</div>
@@ -257,9 +255,37 @@
 const productModal = document.getElementById("productModal");
 const closeModalBtn = document.querySelector(".close-modal");
 
-// Open modal when clicking Order
+// Open modal when clicking Order and populate dynamically
 document.querySelectorAll(".open-product").forEach(button => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (e) => {
+        const card = button.closest('.card');
+        const title = card.querySelector('.name').textContent.trim();
+        const price = card.querySelector('.price').textContent.trim();
+        const imgEl = card.querySelector('.product-image');
+        const imgSrc = imgEl ? imgEl.src : '';
+        const imgAlt = imgEl ? imgEl.alt : title;
+
+        // Populate modal content
+        productModal.querySelector('.product-title').textContent = title;
+        const modalImg = productModal.querySelector('.product-image-box img');
+        if (modalImg) {
+            modalImg.src = imgSrc;
+            modalImg.alt = imgAlt;
+        }
+        const descEl = productModal.querySelector('.description');
+        if (descEl) {
+            descEl.textContent = `You are about to order a ${title} — ${price}. Please confirm to continue.`;
+        }
+
+        // Update confirm button/link
+        const confirmBtn = document.getElementById('confirmOrderBtn');
+        if (confirmBtn) {
+            const imageParam = imgSrc ? `&image=${encodeURIComponent(imgSrc)}` : '';
+            confirmBtn.href = `../Log In/Login.html?product=${encodeURIComponent(title)}&price=${encodeURIComponent(price)}${imageParam}`;
+            confirmBtn.textContent = `Confirm Order — ${price}`;
+        }
+
+        // Open modal
         productModal.style.display = "flex";
     });
 });
