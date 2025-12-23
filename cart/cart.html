@@ -7,7 +7,7 @@
 </head>
 <body>
 	<header class="header">
-		<a href="#" class="logo"> CAKERY</a>
+		<a href="../main/start.html" class="logo"> CAKERY</a>
 		<nav class="navbar">
 			<a href="../main/start.html">Home</a>
 			<a href="../main/start.html">About</a>
@@ -20,7 +20,6 @@
 		</div>
 	</header>
     <div class="cart-order" id="cartOrder">
-        <a href="../main/start.html"></a>
 		<h2>Shopping Cart</h2>
         <div class="cart-details">
             <h3>Name</h3>
@@ -36,6 +35,14 @@
 				<p class="quantity">Quantity: 1</p>
             </div>
 		</div>
+		<div class="cart-item">
+			<img src="https://i.pinimg.com/736x/6f/d1/9c/6fd19ce547ef7319e53a6ea37c18bfd9.jpg" alt="Croissant" class="product-image">
+			<div class="item-details">
+				<h3 class="name">Croissant</h3>
+				<p class="price">$7.00</p>
+				<p class="quantity">Quantity: 1</p>
+            </div>
+		</div>
 		<button class="checkout-btn" onclick="showConfirmModal()">Checkout</button>	
 	</div>
     <div class="modal" id="confirmModal">
@@ -43,8 +50,8 @@
             <h2>Confirm Order</h2>
             <p>Your total is <strong>$22.00</strong></p>
             <div class="modal-buttons">
-                <button href="../main/start.html" class="place-order-btn" onclick="placeOrder()">Place Order</button>
-                <button class="cancel-order-btn" onclick="closeConfirmModal()">Cancel</button>
+                <button type="button" class="place-order-btn" onclick="placeOrder()">Place Order</button>
+                <button type="button" class="cancel-order-btn" onclick="closeConfirmModal()">Cancel</button>
             </div>
         </div>
     </div>
@@ -61,7 +68,7 @@
 
         function placeOrder() {
             alert('Order placed successfully!');
-            closeConfirmModal();
+            window.location.href = '../main/start.html';
         }
 
         window.onclick = function(event) {

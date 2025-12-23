@@ -30,11 +30,7 @@
                 	<p><strong>Contain:</strong> Flour, Water, Yeast, Salt</p>
                 	<p><strong>Calories:</strong> 289 Calories / serving</p>
 
-<<<<<<< HEAD
-                	<a href="../Log In/Login.html" class="btn" id="confirmOrderBtn">Confirm Order</a>
-=======
                 	<a href="../cart/cart.html" class="btn open-login-modal">Add to Cart</a>
->>>>>>> ef9ca79fe16959f63ec713fe0ab4814ea20c238f
             	</div>
         	</div>
     	</div>
@@ -131,7 +127,7 @@
             <a href="#contact">Contact</a>
 		</nav>
 		<div class="icons">
-			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVy7YNFV5QyZ9S-a84dwwiN1IOk5p6HEh3rg&s" alt="pfp" style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer;">
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVy7YNFV5QyZ9S-a84dwwiN1IOk5p6HEh3rg&s" alt="pfp" style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer;" onclick="loginModal.style.display = 'flex'; document.body.style.overflow = 'hidden';">
 		</div>
 	</header>
 	<section class="home" id="home">
@@ -336,17 +332,12 @@
 
 const productModal = document.getElementById("productModal");
 const closeModalBtn = document.querySelector(".close-modal");
-<<<<<<< HEAD
-
-// Open modal when clicking Order and populate dynamically
-=======
 const loginModal = document.getElementById("loginModal");
 const signupModal = document.getElementById("signupModal");
 const forgotModal = document.getElementById("forgotModal");
 const confirmModal = document.getElementById("confirmModal");
 const authCloseButtons = document.querySelectorAll(".auth-close-modal");
 //for product popup
->>>>>>> ef9ca79fe16959f63ec713fe0ab4814ea20c238f
 document.querySelectorAll(".open-product").forEach(button => {
     button.addEventListener("click", (e) => {
         const card = button.closest('.card');
