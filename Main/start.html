@@ -17,12 +17,10 @@
         	<h2 class="product-title">Freshly Baked Baguette</h2>
 
         	<div class="product-modal-content">
-            	<!-- LEFT IMAGE -->
             	<div class="product-image-box">
                 	<img src="https://i0.wp.com/www.pardonyourfrench.com/wp-content/uploads/2025/09/homemade-baguettes-23.jpg?fit=801%2C1200&ssl=1" alt="Baguette">
             	</div>
 
-            	<!-- RIGHT DETAILS -->
             	<div class="product-details">
                 	<p class="description">
                     	
@@ -32,14 +30,99 @@
                 	<p><strong>Contain:</strong> Flour, Water, Yeast, Salt</p>
                 	<p><strong>Calories:</strong> 289 Calories / serving</p>
 
+<<<<<<< HEAD
                 	<a href="../Log In/Login.html" class="btn" id="confirmOrderBtn">Confirm Order</a>
+=======
+                	<a href="../cart/cart.html" class="btn open-login-modal">Add to Cart</a>
+>>>>>>> ef9ca79fe16959f63ec713fe0ab4814ea20c238f
             	</div>
         	</div>
     	</div>
 	</div>
 
+
+	<div class="auth-modal" id="loginModal">
+    	<div class="auth-modal-box">
+        	<button class="auth-close-modal">&times;</button>
+        	<div class="auth-header">
+            	<div class="auth-brandname">CAKERY</div>
+        	</div>
+        	<div class="auth-loginhead">LOG IN</div>
+        	<div class="auth-signintext">New to Cakery?&nbsp;<a href="#" class="switch-to-signup">Create an account</a></div>
+        	<div class="auth-userinfo">
+            	<div class="auth-usertext">Username or Email</div>
+            	<input type="text">
+        	</div>
+        	<div class="auth-userinfo">
+            	<div class="auth-usertext">Password</div>
+            	<input type="password">
+        	</div>
+        	<div class="auth-footer">
+            	<a href="#" class="auth-loginbutton close-login">Log in</a>
+            	<a href="#" class="auth-forgpass switch-to-forgot">Forgot Password</a>
+        	</div>
+    	</div>
+	</div>
+
+	<div class="auth-modal" id="signupModal">
+    	<div class="auth-modal-box">
+        	<button class="auth-close-modal">&times;</button>
+        	<div class="auth-header">
+            	<div class="auth-brandname">CAKERY</div>
+        	</div>
+        	<div class="auth-loginhead">SIGN UP</div>
+        	<div class="auth-signintext">Already have an account?&nbsp;<a href="#" class="switch-to-login">Log in</a></div>
+        	<div class="auth-userinfo">
+            	<div class="auth-usertext">Username</div>
+            	<input type="text">
+            	<div class="auth-usertext">Email</div>
+            	<input type="email">
+            	<div class="auth-usertext">Password</div>
+            	<input type="password">
+            	<div class="auth-usertext">Confirm Password</div>
+            	<input type="password">
+        	</div>
+        	<div class="auth-footer">
+            	<a href="#" class="auth-loginbutton close-signup">Create an account</a>
+        	</div>
+    	</div>
+	</div>
+
+	<div class="auth-modal" id="forgotModal">
+    	<div class="auth-modal-box">
+        	<button class="auth-close-modal">&times;</button>
+        	<div class="auth-loginhead">Forgot Password</div>
+        	<div class="auth-signintext">Enter your email address</div>
+        	<div class="auth-userinfo">
+            	<div class="auth-usertext">Email Address</div>
+            	<input type="text">
+        	</div>
+        	<div class="auth-footer">
+            	<a href="#" class="auth-loginbutton switch-to-confirm">Continue</a>
+        	</div>
+    	</div>
+	</div>
+
+	<div class="auth-modal" id="confirmModal">
+    	<div class="auth-modal-box">
+        	<button class="auth-close-modal">&times;</button>
+        	<div class="auth-loginhead">Confirmation Code</div>
+        	<div class="auth-signintext">We've sent you the code through Email</div>
+        	<div class="auth-normtext">Enter 4-digit code</div>
+        	<div class="auth-boxes">
+            	<input type="number" class="auth-box">
+            	<input type="number" class="auth-box">
+            	<input type="number" class="auth-box">
+            	<input type="number" class="auth-box">
+        	</div>
+        	<div class="auth-footer">
+            	<a href="#" class="auth-loginbutton close-confirm">Continue</a>
+        	</div>
+    	</div>
+	</div>
+
 	<header class="header">
-		<a href="#" class="logo"> CAKERY</a>
+		<a href="#" class="logo" id="logo"> CAKERY</a>
 		<nav class="navbar">
 			<a href="#home">Home</a>
 			<a href="#about">About</a>
@@ -48,7 +131,7 @@
             <a href="#contact">Contact</a>
 		</nav>
 		<div class="icons">
-            <a href="../Log In/Login.html" class="btn">Order Now</a>
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVy7YNFV5QyZ9S-a84dwwiN1IOk5p6HEh3rg&s" alt="pfp" style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer;">
 		</div>
 	</header>
 	<section class="home" id="home">
@@ -250,12 +333,20 @@
 		<p>&copy; 2024 Cakery. All rights reserved.</p>
 	</footer>
 <script>
-/* ===== PRODUCT MODAL SCRIPT ===== */
 
 const productModal = document.getElementById("productModal");
 const closeModalBtn = document.querySelector(".close-modal");
+<<<<<<< HEAD
 
 // Open modal when clicking Order and populate dynamically
+=======
+const loginModal = document.getElementById("loginModal");
+const signupModal = document.getElementById("signupModal");
+const forgotModal = document.getElementById("forgotModal");
+const confirmModal = document.getElementById("confirmModal");
+const authCloseButtons = document.querySelectorAll(".auth-close-modal");
+//for product popup
+>>>>>>> ef9ca79fe16959f63ec713fe0ab4814ea20c238f
 document.querySelectorAll(".open-product").forEach(button => {
     button.addEventListener("click", (e) => {
         const card = button.closest('.card');
@@ -290,32 +381,102 @@ document.querySelectorAll(".open-product").forEach(button => {
     });
 });
 
-// Close modal when clicking X
+
+// Close product modal
 closeModalBtn.addEventListener("click", () => {
     productModal.style.display = "none";
 });
-
-// Close modal when clicking outside the box
+// Close auth modals
+authCloseButtons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        e.target.closest(".auth-modal").style.display = "none";
+        document.body.style.overflow = "auto";
+    });
+});
+// close menu when clicking outside
 productModal.addEventListener("click", (e) => {
     if (e.target === productModal) {
         productModal.style.display = "none";
     }
 });
-// Select all buttons and product cards
+// close auth when clicking outside
+[loginModal, signupModal, forgotModal, confirmModal].forEach(modal => {
+    if (modal) {
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+    }
+});
+//for authentication popup
+document.querySelectorAll(".close-login").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        loginModal.style.display = "none";
+        document.body.style.overflow = "auto";
+    });
+});
+
+document.querySelectorAll(".close-signup").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        signupModal.style.display = "none";
+        document.body.style.overflow = "auto";
+    });
+});
+
+document.querySelectorAll(".close-confirm").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        confirmModal.style.display = "none";
+        document.body.style.overflow = "auto";
+    });
+});
+
+document.querySelectorAll(".switch-to-signup").forEach(link => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        loginModal.style.display = "none";
+        signupModal.style.display = "flex";
+    });
+});
+
+document.querySelectorAll(".switch-to-login").forEach(link => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        signupModal.style.display = "none";
+        loginModal.style.display = "flex";
+    });
+});
+
+document.querySelectorAll(".switch-to-forgot").forEach(link => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        loginModal.style.display = "none";
+        forgotModal.style.display = "flex";
+    });
+});
+
+document.querySelectorAll(".switch-to-confirm").forEach(link => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        forgotModal.style.display = "none";
+        confirmModal.style.display = "flex";
+    });
+});
+// for product left-right category
 const categoryButtons = document.querySelectorAll(".submenu-btn");
 const productCards = document.querySelectorAll(".card");
 
-// Add click event to each category button
 categoryButtons.forEach(button => {
     button.addEventListener("click", () => {
-        // Remove active class from all buttons
         categoryButtons.forEach(btn => btn.classList.remove("active"));
-        // Add active class to clicked button
         button.classList.add("active");
 
         const category = button.getAttribute("data-category");
 
-        // Show/hide cards based on category
         productCards.forEach(card => {
             if (category === "all" || card.getAttribute("data-category") === category) {
                 card.classList.remove("hidden");

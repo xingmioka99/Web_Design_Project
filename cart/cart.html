@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cart.css">
+    <title>Document</title>
+</head>
+<body>
+	<header class="header">
+		<a href="#" class="logo"> CAKERY</a>
+		<nav class="navbar">
+			<a href="../main/start.html">Home</a>
+			<a href="../main/start.html">About</a>
+			<a href="../main/start.html">Delivery</a>
+			<a href="../main/start.html">Location</a>
+            <a href="../main/start.html">Contact</a>
+		</nav>
+		<div class="icons">
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVy7YNFV5QyZ9S-a84dwwiN1IOk5p6HEh3rg&s" alt="pfp" style="width: 40px; height: 40px; border-radius: 50%; cursor: pointer;">
+		</div>
+	</header>
+    <div class="cart-order" id="cartOrder">
+        <a href="../main/start.html"></a>
+		<h2>Shopping Cart</h2>
+        <div class="cart-details">
+            <h3>Name</h3>
+            <h3>Price</h3>
+            <h3>Quantity</h3>
+        </div>
+
+		<div class="cart-item">
+			<img src="https://i0.wp.com/www.pardonyourfrench.com/wp-content/uploads/2025/09/homemade-baguettes-23.jpg?fit=801%2C1200&ssl=1" alt="Baguette" class="product-image">
+			<div class="item-details">
+				<h3 class="name">Baguette</h3>
+				<p class="price">$22.00</p>
+				<p class="quantity">Quantity: 1</p>
+            </div>
+		</div>
+		<button class="checkout-btn" onclick="showConfirmModal()">Checkout</button>	
+	</div>
+    <div class="modal" id="confirmModal">
+        <div class="modal-content">
+            <h2>Confirm Order</h2>
+            <p>Your total is <strong>$22.00</strong></p>
+            <div class="modal-buttons">
+                <button href="../main/start.html" class="place-order-btn" onclick="placeOrder()">Place Order</button>
+                <button class="cancel-order-btn" onclick="closeConfirmModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showConfirmModal() {
+            const modal = document.getElementById('confirmModal');
+            modal.style.display = 'flex';
+        }
+
+        function closeConfirmModal() {
+            const modal = document.getElementById('confirmModal');
+            modal.style.display = 'none';
+        }
+
+        function placeOrder() {
+            alert('Order placed successfully!');
+            closeConfirmModal();
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('confirmModal');
+            if (event.target === modal) {
+                closeConfirmModal();
+            }
+        }
+    </script>
+</body>
+</html>
